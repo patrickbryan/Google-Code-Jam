@@ -17,7 +17,7 @@ public class C {
      */
     public static void main(String[] args) throws Exception {
         BufferedWriter out = new BufferedWriter(new FileWriter("ansC.out"));
-        Scanner in = new Scanner(new File("C-small-attempt2.in"));
+        Scanner in = new Scanner(new File("C-small-practice.in"));
         int testCases;
         int rows, columns, mines, max, freeSpots, spots, spotsNeeded;
         boolean possible, usedSpot;
@@ -45,8 +45,8 @@ public class C {
             if (spotsNeeded == 1) {
                 grid = createGrid(matrix);
                 possible = true;
-            } else if ((rows == 2 || columns == 2) && rows != 1 && columns != 1
-                    && mines % 2 == 1) {
+//            } else if ((rows == 2 || columns == 2) && rows != 1 && columns != 1
+//                    && mines % 2 == 1) {
                 
             } else {
                 matrix[0][0] = true;
@@ -72,6 +72,10 @@ public class C {
                                 downY--;
                                 diagX--;
                                 diagY--;
+                            }
+                            if (diagX != diagY) {
+                                diagX = 0;
+                                diagY = 0;
                             }
 
                             try {
